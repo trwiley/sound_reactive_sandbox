@@ -28,11 +28,16 @@ class ofApp : public ofBaseApp{
     ofParameter<float> volume;
     ofParameter<float> decay;
     
+    ofxVec3Slider cubeSlider;
+
+    
     ofSoundPlayer sound;
     
     float *fft;
     float *soundSpectrum;
     int bands;
     int rectangleCoordinates[4][4];
+    
+    ofBoxPrimitive box1;
 		
 };
