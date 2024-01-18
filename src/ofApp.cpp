@@ -18,6 +18,8 @@ void ofApp::setup(){
     }
     bands = 64;
     
+    ofSoundStreamSetup(2, 0, 44100, 256, 4);
+    
     box1.set(150);
     
     

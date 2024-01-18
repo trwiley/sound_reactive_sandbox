@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -24,22 +23,18 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo) override;
 		void gotMessage(ofMessage msg) override;
     
+    void audioIn(ofSoundBuffer & input);
     
-    ofxPanel gui;
-    ofParameter<float> volume;
-    ofParameter<float> decay;
+    vector<float> left;
+    vector<float> right;
+    vector<float> volHistory;
     
-    ofxVec3Slider cubeSlider;
-
+    int bufferCounter;
+    int drawCounter;
     
-    ofSoundPlayer sound;
+    float smoothedVol;
+    float scaledVol;
     
-    float *fft;
-    float *soundSpectrum;
-    int bands;
-    int rectangleCoordinates[4][4];
-    
-    ofBoxPrimitive box1;
-    
+    ofSoundStream soundStream;
 		
 };
